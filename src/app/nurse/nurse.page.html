@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Mobile Nurse</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-content>
+    <ion-card *ngFor="let nurse of nurses">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3" offset="4">
+            <ion-avatar>
+              <img src="{{nurse.nurseImage}}" />
+            </ion-avatar>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <h3 class="text-align-center">{{nurse.nurseName}}</h3>
+            <b>Services</b> <br />
+            {{nurse.nurseServices}}
+
+            <br />
+            Contanct: {{nurse.nurseContact}}
+
+            <ion-button color="success" size="small" style="float: right">
+              <a href="{{'tel:'+ nurse.nurseContact}}">Call me</a>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-content>
+</ion-content>

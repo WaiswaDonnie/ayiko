@@ -1,0 +1,94 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+#container a {
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+ion-avatar{
+  width:80px;
+  height: 80px;
+}
+ion-title{
+  font-family: 'Akronim', cursive;
+  font-size: 20px;
+  color: #ffb108;
+
+}
+ion-card{
+  height: 110px;
+  margin: 0px;
+}
+.food-col{
+  margin-bottom: 20px;
+  
+}
+
+.food-col ion-icon{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30%;
+}
+
+ion-icon{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+#iconlabel{
+ font-size: 50px;
+ display: flex;
+
+  }
+ion-label{
+  text-align: center;
+ justify-content: center;
+ display: flex;
+ font-weight: bold;
+ font-size: 15px;
+
+}
+  .swiper-slide-prev{
+    opacity: .5;
+    transform: rotate(-8deg);
+  }
+  .swiper-slide-next{
+    opacity: .5;
+    transform: rotate(8deg);
+  }
+  .swiper-slide{
+    transition: .4s all;
+  }
+  
+  .advertImg{
+    border-radius: 40px;
+    width: 100%;
+    
+    
+  }

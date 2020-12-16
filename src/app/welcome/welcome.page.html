@@ -1,0 +1,129 @@
+<div class="brand"></div>
+<ion-content>
+  <ion-segment [(ngModel)]="tabsegment" color="warning">
+    <ion-segment-button value="register">
+      <ion-label>Create account</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="login" required>
+      <ion-label>Login</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="tabsegment">
+    <ion-card *ngSwitchCase="'register'">
+      <ion-card-content>
+        <div class="alert alert-danger" *ngIf="registerAuthError">
+          <p>{{ registerAuthError }}</p>
+        </div>
+
+        <form
+          [formGroup]="registrationForm"
+          (ngSubmit)="createUser(registrationForm)"
+        >
+          <ion-item>
+            <ion-label position="floating">Email </ion-label>
+            <ion-input
+              focus
+              type="text"
+              formControlName="email"
+              [class.danger]="email.touched && email.invalid"
+            >
+            </ion-input>
+          </ion-item>
+          <span *ngIf="email.touched && email.invalid">
+            <small class="is-invalid" *ngIf="email.errors?.required"
+              >Email required</small
+            >
+          </span>
+          <ion-item>
+            <ion-label position="floating">Phone number</ion-label>
+            <ion-input
+              type="number"
+              formControlName="regPhoneNumber"
+            ></ion-input>
+          </ion-item>
+          <span *ngIf="regPhoneNumber.touched && regPhoneNumber.invalid">
+            <small class="is-invalid" *ngIf="regPhoneNumber.errors?.required"
+              >Phone number required</small
+            >
+            <small class="is-invalid" *ngIf="regPhoneNumber.errors?.maxlength"
+              >Shouldn`t exceed 10 digits</small
+            >
+            <small class="is-invalid" *ngIf="regPhoneNumber.errors?.minlength"
+              >Should be 10 digits</small
+            >
+          </span>
+          <ion-item>
+            <ion-label position="floating">Password </ion-label>
+            <ion-input
+              type="password"
+              formControlName="password"
+              [class.danger]="password.touched && password.invalid"
+            >
+            </ion-input>
+          </ion-item>
+          <span *ngIf="password.touched && password.invalid">
+            <small class="is-invalid" *ngIf="password.errors?.required"
+              >Password required</small
+            >
+            <small class="is-invalid" *ngIf="password.errors?.minlength"
+              >Should be more than 6 digits</small
+            >
+          </span>
+          <ion-button
+            type="submit"
+            [disabled]="!registrationForm.valid"
+            id="regBtn"
+            size="small"
+            >Register</ion-button
+          >
+        </form>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngSwitchCase="'login'">
+      <ion-card-content>
+        <div class="alert alert-danger" *ngIf="loginAuthError">
+          <p>{{ loginAuthError }}</p>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
+          <ion-item>
+            <ion-label position="floating">Email </ion-label>
+            <ion-input
+              type="text"
+              formControlName="logEmail"
+              [class.danger]="logEmail.touched && logEmail.invalid"
+            >
+            </ion-input>
+          </ion-item>
+          <span *ngIf="logEmail.touched && logEmail.invalid">
+            <small class="is-invalid" *ngIf="logEmail.errors?.required"
+              >Email required</small
+            >
+            <small class="is-invalid" *ngIf="logEmail.errors?.email"
+              >Should be valid</small
+            >
+          </span>
+          <ion-item>
+            <ion-label position="floating">Password </ion-label>
+            <ion-input
+              type="password"
+              formControlName="logPassword"
+              [class.danger]="logPassword.touched && logPassword.invalid"
+            ></ion-input>
+          </ion-item>
+          <span *ngIf="logPassword.touched && password.invalid">
+            <small class="is-invalid" *ngIf="logPassword.errors?.required"
+              >Password required</small
+            >
+            <small class="is-invalid" *ngIf="logPassword.errors?.minlength"
+              >Should be more than 3 digits</small
+            >
+          </span>
+          <ion-button type="submit" [disabled]="!loginForm.valid" id="logbtn"
+            >Login</ion-button
+          >
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

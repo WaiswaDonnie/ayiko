@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Hire special</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-content>
+    <ion-card *ngFor="let special of specials">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3" offset="4">
+            <ion-avatar>
+              <img src="{{special.carImage}}" />
+            </ion-avatar>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            Owner: {{special.name}} Cart type: {{special.carType}}, <br />
+            Contact: {{special.phoneContact}}
+
+            <ion-button color="danger" size="small" style="float: right">
+              <a href="{{'tel:' + special.phoneContact}}">Call me</a>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-content>
+</ion-content>

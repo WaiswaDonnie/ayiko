@@ -1,0 +1,50 @@
+ion-avatar{
+    height: 350px;
+    width: 300px;
+    justify-content: center;
+    margin:5px;
+    background-image: url('./image.jpg');
+    background-size: cover;
+    
+
+}
+ion-label{
+    margin-left:10px;
+    
+}
+
+ion-title{
+    text-align: center;
+    font-family: 'Akronim', cursive;
+    font-size: 30px;
+    
+}
+
+ion-item{
+font-family: 'Cabin', sans-serif;
+}
+ion-label{
+font-family: 'Cabin', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+
+}
+#orderbtn{
+    width: 100%;
+    
+    background-color: rgb(33, 247, 14);
+    
+}
+ion-button ion-icon{
+    position: absolute;
+    left: -10px;
+}
+
+ion-card-header{
+    text-align: center;
+}

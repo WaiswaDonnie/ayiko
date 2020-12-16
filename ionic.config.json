@@ -1,0 +1,7 @@
+{
+  "name": "Food spot",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

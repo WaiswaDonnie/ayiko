@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>I.T Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-content>
+    <ion-card *ngFor="let tech of techServices">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3" offset="4">
+            <ion-avatar>
+              <img src="{{tech.serviceImage}}" />
+            </ion-avatar>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <h3>{{tech.name}}</h3>
+            Services include <br />
+            {{tech.services}}
+            <br />
+            Contact : {{tech.phoneContact}}
+
+            <ion-button color="primary" size="small" style="float: right">
+              <a href="{{'tel:'+tech.phoneContact}}">Call me</a>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-content>
+</ion-content>

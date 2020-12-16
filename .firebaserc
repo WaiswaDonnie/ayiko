@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "smoflix-e19cc": {
+      "hosting": {
+        "app": [
+          "smoflix-e19cc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ayiko-8c2ed"
+  }
+}
