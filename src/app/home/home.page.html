@@ -1,9 +1,17 @@
 <ion-header no-border>
   <ion-toolbar>
-    <ion-title slot="start"><strong>City Service</strong></ion-title>
+    <ion-title slot="start"><strong>Smart City</strong></ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-toolbar color="warning"> </ion-toolbar>
+<ion-toolbar color="warning">
+  
+  <ion-buttons slot="end">
+    <ion-button (click)="signOut()" >
+      <ion-icon color="danger" name="power"></ion-icon>
+      <small>Logout</small>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
 
 <ion-content>
   <ion-grid>

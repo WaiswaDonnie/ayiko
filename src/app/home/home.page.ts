@@ -1,3 +1,4 @@
+import { AuthenticationService } from './shared/authentication.service';
 import { ProductsService } from './shared/products.service';
 import { Iadvert } from './shared/productsInterface';
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +21,7 @@ export class HomePage implements OnInit {
   adverts: Iadvert[];
   advertInfo: any;
 
-  constructor(private productServie: ProductsService) {
+  constructor(private productServie: ProductsService, private authService : AuthenticationService) {
 
 
 
@@ -34,5 +35,9 @@ export class HomePage implements OnInit {
 
 
   toggleMenu() {
+  }
+
+  signOut(){
+    this.authService.logOut();
   }
 }
